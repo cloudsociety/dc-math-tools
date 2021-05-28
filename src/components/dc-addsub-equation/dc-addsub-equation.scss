@@ -1,0 +1,12 @@
+:host {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  font: 16pt sans-serif;
+  letter-spacing: 0.2em;
+}
+:host hr {
+  margin: 0;
+  margin-bottom: 2em;
+  border: 0;
+  border-bottom: 1px solid silver;
+}

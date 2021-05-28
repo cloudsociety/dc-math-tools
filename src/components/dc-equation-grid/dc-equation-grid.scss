@@ -1,0 +1,25 @@
+:host {
+  break-after: always;
+
+  .grid {
+    padding-top: 3em;
+    display: grid;
+    grid-gap: 1.5rem 1rem;
+    grid-template-columns: repeat(10, 1fr);
+    justify-items: center;
+  }
+
+  .results {
+    font: 15pt sans-serif;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+
+    span:first-child {
+      display: inline-block;
+      margin-right: auto;
+    }
+  }
+}
