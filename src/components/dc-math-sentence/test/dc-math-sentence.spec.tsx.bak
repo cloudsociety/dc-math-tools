@@ -1,0 +1,18 @@
+import { newSpecPage } from '@stencil/core/testing';
+import { DcMathSentence } from '../dc-math-sentence';
+
+describe('dc-math-sentence', () => {
+  it('renders', async () => {
+    const page = await newSpecPage({
+      components: [DcMathSentence],
+      html: `<dc-math-sentence></dc-math-sentence>`,
+    });
+    expect(page.root).toEqualHtml(`
+      <dc-math-sentence>
+        <mock:shadow-root>
+          <slot></slot>
+        </mock:shadow-root>
+      </dc-math-sentence>
+    `);
+  });
+});

@@ -1,0 +1,16 @@
+version: '2.4'
+
+services:
+  appserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # user: node
+    # working_dir: /app
+    # environment:
+    #   - NODE_ENV=development
+    ports:
+      - 3333:3333
+    volumes:
+      - ./:/app
+    command: sh -c "[ ! -d node_modules ] && npm install; npm run start"

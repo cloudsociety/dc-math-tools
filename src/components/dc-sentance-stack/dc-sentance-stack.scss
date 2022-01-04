@@ -1,0 +1,24 @@
+:host {
+  break-after: always;
+
+  .grid {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-rows: repeat(6, auto);
+  }
+
+  .results {
+    font: 15pt sans-serif;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+
+    span:first-child {
+      display: inline-block;
+      margin-right: auto;
+    }
+  }
+}

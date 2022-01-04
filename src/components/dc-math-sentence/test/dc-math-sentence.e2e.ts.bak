@@ -1,0 +1,11 @@
+import { newE2EPage } from '@stencil/core/testing';
+
+describe('dc-math-sentence', () => {
+  it('renders', async () => {
+    const page = await newE2EPage();
+    await page.setContent('<dc-math-sentence></dc-math-sentence>');
+
+    const element = await page.find('dc-math-sentence');
+    expect(element).toHaveClass('hydrated');
+  });
+});

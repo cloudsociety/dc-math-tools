@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+
+@media print {
+  :host > form {
+    display: none;
+  }
+}
+
+:host .sentence-item {
+  padding: 0.25em 0;
+}
+
+:host .sentence-item:not(:last-child) {
+  border-bottom: 1px solid #000;
+}

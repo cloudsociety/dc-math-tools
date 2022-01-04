@@ -17,7 +17,18 @@ export namespace Components {
         "quantity": string;
         "type": string;
     }
+    interface DcMathSentence {
+        "max": string;
+        "min": string;
+    }
     interface DcPageGenerator {
+    }
+    interface DcPageSentences {
+    }
+    interface DcSentanceStack {
+        "max": string;
+        "min": string;
+        "quantity": string;
     }
 }
 declare global {
@@ -33,16 +44,37 @@ declare global {
         prototype: HTMLDcEquationGridElement;
         new (): HTMLDcEquationGridElement;
     };
+    interface HTMLDcMathSentenceElement extends Components.DcMathSentence, HTMLStencilElement {
+    }
+    var HTMLDcMathSentenceElement: {
+        prototype: HTMLDcMathSentenceElement;
+        new (): HTMLDcMathSentenceElement;
+    };
     interface HTMLDcPageGeneratorElement extends Components.DcPageGenerator, HTMLStencilElement {
     }
     var HTMLDcPageGeneratorElement: {
         prototype: HTMLDcPageGeneratorElement;
         new (): HTMLDcPageGeneratorElement;
     };
+    interface HTMLDcPageSentencesElement extends Components.DcPageSentences, HTMLStencilElement {
+    }
+    var HTMLDcPageSentencesElement: {
+        prototype: HTMLDcPageSentencesElement;
+        new (): HTMLDcPageSentencesElement;
+    };
+    interface HTMLDcSentanceStackElement extends Components.DcSentanceStack, HTMLStencilElement {
+    }
+    var HTMLDcSentanceStackElement: {
+        prototype: HTMLDcSentanceStackElement;
+        new (): HTMLDcSentanceStackElement;
+    };
     interface HTMLElementTagNameMap {
         "dc-addsub-equation": HTMLDcAddsubEquationElement;
         "dc-equation-grid": HTMLDcEquationGridElement;
+        "dc-math-sentence": HTMLDcMathSentenceElement;
         "dc-page-generator": HTMLDcPageGeneratorElement;
+        "dc-page-sentences": HTMLDcPageSentencesElement;
+        "dc-sentance-stack": HTMLDcSentanceStackElement;
     }
 }
 declare namespace LocalJSX {
@@ -57,12 +89,26 @@ declare namespace LocalJSX {
         "quantity"?: string;
         "type"?: string;
     }
+    interface DcMathSentence {
+        "max"?: string;
+        "min"?: string;
+    }
     interface DcPageGenerator {
+    }
+    interface DcPageSentences {
+    }
+    interface DcSentanceStack {
+        "max"?: string;
+        "min"?: string;
+        "quantity"?: string;
     }
     interface IntrinsicElements {
         "dc-addsub-equation": DcAddsubEquation;
         "dc-equation-grid": DcEquationGrid;
+        "dc-math-sentence": DcMathSentence;
         "dc-page-generator": DcPageGenerator;
+        "dc-page-sentences": DcPageSentences;
+        "dc-sentance-stack": DcSentanceStack;
     }
 }
 export { LocalJSX as JSX };
@@ -71,7 +117,10 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "dc-addsub-equation": LocalJSX.DcAddsubEquation & JSXBase.HTMLAttributes<HTMLDcAddsubEquationElement>;
             "dc-equation-grid": LocalJSX.DcEquationGrid & JSXBase.HTMLAttributes<HTMLDcEquationGridElement>;
+            "dc-math-sentence": LocalJSX.DcMathSentence & JSXBase.HTMLAttributes<HTMLDcMathSentenceElement>;
             "dc-page-generator": LocalJSX.DcPageGenerator & JSXBase.HTMLAttributes<HTMLDcPageGeneratorElement>;
+            "dc-page-sentences": LocalJSX.DcPageSentences & JSXBase.HTMLAttributes<HTMLDcPageSentencesElement>;
+            "dc-sentance-stack": LocalJSX.DcSentanceStack & JSXBase.HTMLAttributes<HTMLDcSentanceStackElement>;
         }
     }
 }

@@ -1,0 +1,22 @@
+:host {
+  font-variant-numeric: tabular-nums;
+  font: 16pt sans-serif;
+  line-height: 1.5em;
+}
+:host dl {
+  break-inside: avoid;
+  margin: 0;
+}
+:host dl > div {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  margin-top: 0.25em;
+}
+
+:host dl > div.hidden dd {
+  color: white;
+}
+
+:host dd {
+  border-bottom: 1px solid silver;
+}
