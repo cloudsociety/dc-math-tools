@@ -7,8 +7,10 @@ import { Component, Host, h, Prop } from '@stencil/core';
 })
 export class DcEquationGrid {
   @Prop() type: string = '+';
-  @Prop() max: string = '10';
-  @Prop() min: string = '0';
+  @Prop() topMax: string = '10';
+  @Prop() topMin: string = '0';
+  @Prop() bottomMax: string = '10';
+  @Prop() bottomMin: string = '0';
   @Prop() quantity: string = '50';
 
   render() {
@@ -16,7 +18,7 @@ export class DcEquationGrid {
       <Host>
         <div class="grid">
           {[...Array(+this.quantity).keys()].map(number => (
-            <dc-addsub-equation key={number} type={this.type} max={this.max} min={this.min}></dc-addsub-equation>
+            <dc-addsub-equation key={number} type={this.type} topMax={this.topMax} topMin={this.topMin} bottomMax={this.bottomMax} bottomMin={this.bottomMin}></dc-addsub-equation>
           ))}
         </div>
         <div class="results">

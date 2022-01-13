@@ -7,14 +7,18 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface DcAddsubEquation {
-        "max": string;
-        "min": string;
+        "bottomMax": string;
+        "bottomMin": string;
+        "topMax": string;
+        "topMin": string;
         "type": string;
     }
     interface DcEquationGrid {
-        "max": string;
-        "min": string;
+        "bottomMax": string;
+        "bottomMin": string;
         "quantity": string;
+        "topMax": string;
+        "topMin": string;
         "type": string;
     }
     interface DcMathSentence {
@@ -79,14 +83,18 @@ declare global {
 }
 declare namespace LocalJSX {
     interface DcAddsubEquation {
-        "max"?: string;
-        "min"?: string;
+        "bottomMax"?: string;
+        "bottomMin"?: string;
+        "topMax"?: string;
+        "topMin"?: string;
         "type"?: string;
     }
     interface DcEquationGrid {
-        "max"?: string;
-        "min"?: string;
+        "bottomMax"?: string;
+        "bottomMin"?: string;
         "quantity"?: string;
+        "topMax"?: string;
+        "topMin"?: string;
         "type"?: string;
     }
     interface DcMathSentence {

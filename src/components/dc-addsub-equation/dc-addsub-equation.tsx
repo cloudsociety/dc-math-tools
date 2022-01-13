@@ -8,11 +8,13 @@ import { getRandomInt } from '../../utils/getRandomInt';
 })
 export class DcAddsubEquation {
   @Prop() type: string = '+';
-  @Prop() max: string = '10';
-  @Prop() min: string = '0';
+  @Prop() topMax: string = '10';
+  @Prop() topMin: string = '0';
+  @Prop() bottomMax: string = '10';
+  @Prop() bottomMin: string = '0';
 
   operator: string;
-  numbers = [getRandomInt(+this.min, +this.max), getRandomInt(+this.min, +this.max)];
+  numbers = [getRandomInt(+this.topMin, +this.topMax), getRandomInt(+this.bottomMin, +this.bottomMax)];
 
   connectedCallback() {
     const operator = this.type.charAt(Math.floor(Math.random() * this.type.length));
