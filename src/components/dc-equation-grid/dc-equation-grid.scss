@@ -23,3 +23,9 @@
     }
   }
 }
+
+:host([quantity='25']) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

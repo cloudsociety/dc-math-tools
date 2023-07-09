@@ -9,6 +9,7 @@ export namespace Components {
     interface DcAddsubEquation {
         "bottomMax": string;
         "bottomMin": string;
+        "isTime": boolean;
         "topMax": string;
         "topMin": string;
         "type": string;
@@ -16,6 +17,7 @@ export namespace Components {
     interface DcEquationGrid {
         "bottomMax": string;
         "bottomMin": string;
+        "isTime": boolean;
         "quantity": string;
         "topMax": string;
         "topMin": string;
@@ -85,6 +87,7 @@ declare namespace LocalJSX {
     interface DcAddsubEquation {
         "bottomMax"?: string;
         "bottomMin"?: string;
+        "isTime"?: boolean;
         "topMax"?: string;
         "topMin"?: string;
         "type"?: string;
@@ -92,6 +95,7 @@ declare namespace LocalJSX {
     interface DcEquationGrid {
         "bottomMax"?: string;
         "bottomMin"?: string;
+        "isTime"?: boolean;
         "quantity"?: string;
         "topMax"?: string;
         "topMin"?: string;

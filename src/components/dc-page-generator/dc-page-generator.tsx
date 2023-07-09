@@ -8,6 +8,8 @@ import { Component, Host, h, State, Element } from '@stencil/core';
 export class DcPageGenerator {
   @Element() el: HTMLElement;
   @State() pageQuantity: number = 1;
+  @State() equationQuantity: string = '50';
+  @State() isTime: boolean = false;
   @State() types: string = '+';
   @State() topMin: string = '0';
   @State() topMax: string = '10';
@@ -23,6 +25,8 @@ export class DcPageGenerator {
     const topMax = this.el.shadowRoot.querySelector('#topmax');
     const bottomMin = this.el.shadowRoot.querySelector('#bottommin');
     const bottomMax = this.el.shadowRoot.querySelector('#bottommax');
+    const equationQuantity = this.el.shadowRoot.querySelector('#equationQty');
+    const isTime = this.el.shadowRoot.querySelector('#isTime');
 
     this.key = Date.now();
 
@@ -31,6 +35,8 @@ export class DcPageGenerator {
     this.topMax = (topMax as HTMLInputElement).value;
     this.bottomMin = (bottomMin as HTMLInputElement).value;
     this.bottomMax = (bottomMax as HTMLInputElement).value;
+    this.equationQuantity = (equationQuantity as HTMLInputElement).checked ? '25' : '50';
+    this.isTime = (isTime as HTMLInputElement).checked;
 
     this.types = Array.from(checkboxes)
       .map((elem: HTMLInputElement) => {
@@ -40,12 +46,21 @@ export class DcPageGenerator {
   }
 
   render() {
+    console.log(this.equationQuantity);
     return (
       <Host>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div>
             <label htmlFor="pageQty">Number of pages</label>
             <input id="pageQty" type="number" value={this.pageQuantity} />
+          </div>
+          <div>
+            <label htmlFor="equationQty">Only 25 equations? (50 by default)</label>
+            <input id="equationQty" type="checkbox" checked={this.equationQuantity === '25'} />
+          </div>
+          <div>
+            <label htmlFor="isTime">Time math?</label>
+            <input id="isTime" type="checkbox" checked={this.isTime} />
           </div>
           <fieldset>
             <legend>Choose your equation types</legend>
@@ -99,6 +114,8 @@ export class DcPageGenerator {
               topMax={this.topMax}
               bottomMin={this.bottomMin}
               bottomMax={this.bottomMax}
+              quantity={this.equationQuantity}
+              isTime={this.isTime}
             ></dc-equation-grid>
           ))}
         </div>

@@ -10,3 +10,9 @@
   border: 0;
   border-bottom: 1px solid silver;
 }
+
+:host i {
+  font-style: normal;
+  background-color: silver;
+  box-shadow: -4px 0 0 silver;
+}
